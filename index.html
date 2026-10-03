@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakura Pixel Farm Sanctuary - Kuil & Jembatan Merah</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Press Start 2P & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        pixel: ['"Press Start 2P"', 'monospace'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        sakura: {
+                            50: '#fdf2f4',
+                            100: '#fbe7eb',
+                            200: '#f7d1d9',
+                            300: '#f1abb9',
+                            400: '#e8758c',
+                            500: '#dc4a6b',
+                            600: '#c52d4f',
+                            700: '#a6213f',
+                            800: '#8b1f37',
+                            900: '#751d32',
+                            950: '#420d1a',
+                        },
+                        retro: {
+                            dark: '#1a1c23',
+                            card: '#242736',
+                            border: '#3b3f5c',
+                            gold: '#f3c66a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            image-rendering: pixelated;
+        }
+        .pixel-border {
+            box-shadow: 4px 4px 0px 0px #751d32;
+        }
+        .pixel-border-gold {
+            box-shadow: 4px 4px 0px 0px #f3c66a;
+        }
+        .pixel-btn {
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+        }
+        .pixel-btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #751d32;
+        }
+        .pixel-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px #751d32;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1c23;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #e8758c;
+            border: 2px solid #1a1c23;
+        }
+    </style>
+</head>
+<body class="bg-retro-dark text-sakura-100 font-sans selection:bg-sakura-500 selection:text-white min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>

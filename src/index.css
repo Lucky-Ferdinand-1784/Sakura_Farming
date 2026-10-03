@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Press+Start+2P&display=swap');
+
+:root {
+  --color-sakura-50: #fdf2f4;
+  --color-sakura-100: #fbe7eb;
+  --color-sakura-200: #f7d1d9;
+  --color-sakura-300: #f1abb9;
+  --color-sakura-400: #e8758c;
+  --color-sakura-500: #dc4a6b;
+  --color-sakura-600: #c52d4f;
+  --color-sakura-700: #a6213f;
+  --color-sakura-800: #8b1f37;
+  --color-sakura-900: #751d32;
+  --color-sakura-950: #420d1a;
+  
+  --color-retro-dark: #1a1c23;
+  --color-retro-card: #242736;
+  --color-retro-border: #3b3f5c;
+  --color-retro-gold: #f3c66a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1a1c23;
+  color: #fbe7eb;
+  font-family: 'Inter', sans-serif;
+  image-rendering: pixelated;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Pixel Fonts */
+.font-pixel {
+  font-family: 'Press Start 2P', monospace;
+  letter-spacing: -0.5px;
+}
+
+/* Pixel borders */
+.pixel-border {
+  box-shadow: 4px 4px 0px 0px #751d32;
+}
+
+.pixel-border-gold {
+  box-shadow: 4px 4px 0px 0px #f3c66a;
+}
+
+.pixel-border-dark {
+  box-shadow: 4px 4px 0px 0px #111217;
+}
+
+.pixel-border-sm {
+  box-shadow: 2px 2px 0px 0px #751d32;
+}
+
+/* Pixel Buttons */
+.pixel-btn {
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+  user-select: none;
+}
+
+.pixel-btn:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #751d32;
+}
+
+.pixel-btn:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px #751d32;
+}
+
+.pixel-btn-gold:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #f3c66a;
+}
+
+.pixel-btn-gold:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px #f3c66a;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1a1c23;
+}
+::-webkit-scrollbar-thumb {
+  background: #e8758c;
+  border: 2px solid #1a1c23;
+}
+
+/* Floating animation for ready crops */
+@keyframes harvestPulse {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    filter: drop-shadow(0 0 6px rgba(243, 198, 106, 0.7));
+  }
+  50% {
+    transform: translateY(-4px) scale(1.05);
+    filter: drop-shadow(0 0 12px rgba(243, 198, 106, 0.95));
+  }
+}
+
+.animate-harvest-pulse {
+  animation: harvestPulse 1.8s ease-in-out infinite;
+}
+
+/* Float Up Popup Animation (coins & petals) */
+@keyframes floatUpFade {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -20px) scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -40px) scale(1);
+  }
+}
+
+.float-popup {
+  animation: floatUpFade 1.2s ease-out forwards;
+}
+
+/* Water drop ripple */
+@keyframes waterRipple {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.animate-water-ripple {
+  animation: waterRipple 0.6s ease-out forwards;
+}
+
+/* Character wobble walk */
+@keyframes walkWobble {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-2px) rotate(-3deg); }
+  75% { transform: translateY(-2px) rotate(3deg); }
+}
+
+.character-walking {
+  animation: walkWobble 0.25s infinite ease-in-out;
+}
+
+/* Scanline Overlay (Retro TV) */
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Day/Night Ambience filters */
+.ambience-morning {
+  background: radial-gradient(circle at 10% 20%, rgba(254, 215, 170, 0.15), transparent 60%);
+}
+
+.ambience-noon {
+  background: radial-gradient(circle at 50% 10%, rgba(253, 242, 244, 0.1), transparent 50%);
+}
+
+.ambience-dusk {
+  background: radial-gradient(circle at 80% 30%, rgba(220, 74, 107, 0.2), rgba(88, 28, 135, 0.15) 70%);
+}
+
+.ambience-night {
+  background: radial-gradient(circle at 50% 50%, rgba(30, 27, 75, 0.35), rgba(15, 23, 42, 0.5) 80%);
+}

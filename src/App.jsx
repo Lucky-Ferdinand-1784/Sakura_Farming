@@ -297,8 +297,15 @@ export default function App() {
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-sakura-900/60 border border-sakura-600 font-pixel text-[9px] text-sakura-300">
                 <span className="w-2 h-2 bg-sakura-400 animate-ping"></span> ESTETIKA PIXEL FARM JEPANG
               </div>
-              <h1 className="font-pixel text-xl sm:text-3xl lg:text-4xl text-white leading-relaxed">
-                Kuil Sakura & <span className="text-sakura-400">Jembatan Merah</span>
+              <h1 className="font-pixel text-xl sm:text-3xl lg:text-4xl text-white leading-relaxed flex items-center justify-center lg:justify-start gap-3">
+                <img 
+                  src="/favicon.svg" 
+                  alt="Kuil Sakura Icon" 
+                  className="w-8 h-8 sm:w-10 sm:h-10 inline-block pixel-border border-2 border-sakura-300/40 bg-sakura-950/60 p-1 flex-shrink-0"
+                />
+                <span>
+                  Kuil Sakura & <span className="text-sakura-400">Jembatan Merah</span>
+                </span>
               </h1>
               <p className="text-sakura-200 text-xs sm:text-sm font-sans max-w-xl leading-relaxed">
                 Tanam bibit sakral di pelataran kuil, pancing ikan Koi di jembatan merah, dan persembahkan hasil panen untuk menghidupkan kembali suaka sakura musim semi.
